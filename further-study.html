@@ -75,13 +75,13 @@
 
     // Create variables for Espresso, Latte, and Hot Chocolate;
     // and add an event listener to each that calls make_coffee
-    // var espresso = document.getElementById("espresso");
-    // var latte = document.getElementById("latte");
-    // var hotChocolate = document.getElementById("hot-chocolate");
+    var espresso = $("#espresso");
+    var latte = $("#latte");
+    var hotChocolate = $("#hot-chocolate");
 
-    // espresso.addEventListener('click', function () { return makeCoffee("espresso"); });
-    // latte.addEventListener('click', function () { return makeCoffee("latte"); });
-    // hotChocolate.addEventListener('click', function () { return makeCoffee("hot chocolate"); });
+    espresso.on('click', function () { return makeCoffee("espresso"); });
+    latte.on('click', function () { return makeCoffee("latte"); });
+    hotChocolate.on('click', function () { return makeCoffee("hot chocolate"); });
 
     // Use this dictionary to calculate profits for the day and log them to the console.
 
