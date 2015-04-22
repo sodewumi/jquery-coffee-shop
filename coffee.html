@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hackbright Coffee Shop</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link href="static/coffee.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="starter-template">
+        <h1>Coffee Shop</h1>
+        <br>
+
+        <img id="coffee_image" src="FIXME" alt="make this image work" height="300" width="200">
+
+        <h3 id="message">Click The Image To Order Coffee</h3>
+
+        <table class="table">
+            <tr>
+                <td class="col-md-2">
+                    <button class="btn btn-default" id="espresso">Espresso</button>
+                </td>
+                <td class="col-md-2">
+                    <button class="btn btn-default" id="latte">Latte</button>
+                </td>
+                <td class="col-md-2">
+                    <button class="btn btn-default" id="hot-chocolate">Hot Chocolate</button>
+                </td>
+            </tr>
+            <tr>
+                <td>$3.25</td>
+                <td>$4.15</td>
+                <td>$2.50</td>
+            </tr>
+        </table>
+
+        <h4>Total: <span id="revenue"><!-- Revenue Message will show up here --></span></h4>
+    </div>
+</div>
+
+<script>
+
+    var myImage = document.getElementById("coffee_image");
+    var myRevenueMessage = document.getElementById("revenue");
+
+    myImage.setAttribute('src', "static/coffee_beans.jpg");
+
+    myImage.addEventListener('click', function () {
+        return makeCoffee("brew");
+    });
+
+    function makeCoffee() {
+         myImage.src = "static/coffee_machine.jpg";
+         setTimeout(function() { myImage.setAttribute('src', "static/coffee_mug.jpg"); }, 500);
+         setTimeout(function() { myImage.setAttribute('src', "static/coffee_beans.jpg"); }, 1500);
+    }
+
+</script>
+
+</body>
+</html>
