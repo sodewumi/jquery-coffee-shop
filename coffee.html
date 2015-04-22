@@ -2,18 +2,20 @@
 <html>
 <head>
     <title>Hackbright Coffee Shop</title>
-
+    <!-- CSS -->
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link href="static/coffee.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
 <div class="container">
     <div class="starter-template">
-        <h1>Coffee Shop</h1>
+        <h1>Cofgit inifee Shop</h1>
         <br>
 
         <img id="coffee_image" src="FIXME" alt="make this image work" height="300" width="200">
@@ -45,19 +47,18 @@
 
 <script>
 
-    var myImage = document.getElementById("coffee_image");
-    var myRevenueMessage = document.getElementById("revenue");
+    var myImage = $("#coffee_image")
+    var myRevenueMessage = $("#revenue");
 
-    myImage.setAttribute('src', "static/coffee_beans.jpg");
+    myImage.attr('src', "static/coffee_beans.jpg");
 
-    myImage.addEventListener('click', function () {
-        return makeCoffee("brew");
-    });
+    myImage.on("click", makeCoffee)
 
-    function makeCoffee() {
-         myImage.src = "static/coffee_machine.jpg";
-         setTimeout(function() { myImage.setAttribute('src', "static/coffee_mug.jpg"); }, 500);
-         setTimeout(function() { myImage.setAttribute('src', "static/coffee_beans.jpg"); }, 1500);
+    function makeCoffee(evt) {
+         evt = $(evt.target)
+         evt.attr("src", "static/coffee_machine.jpg");
+         setTimeout(function() { evt.attr('src', "static/coffee_mug.jpg"); }, 500);
+         setTimeout(function() { evt.attr('src', "static/coffee_beans.jpg"); }, 1500);
     }
 
 </script>
