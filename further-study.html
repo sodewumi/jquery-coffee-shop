@@ -67,9 +67,16 @@
         var myRevenue = revenue();
         myRevenueMessage.html("Today's revenues: " + myRevenue);
 
-        myImage.attr('src', "static/coffee_machine.jpg");
-        setTimeout(function () { myImage.attr('src', "static/coffee_mug.jpg"); }, 500);
-        setTimeout(function () { myImage.attr('src', "static/coffee_beans.jpg"); }, 1500);
+        console.log(myImage)
+        // myImage.fadeOut()
+        myImage.attr('src', "static/coffee_machine.jpg").fadeIn(2000);
+        setTimeout(function () { myImage.attr('src', "static/coffee_mug.jpg").fadeIn(2000); }, 1000);
+        // myImage.fadeOut();
+        // setTimeout(function () { myImage.attr('src', "static/coffee_beans.jpg"); }, 2000);
+        // myImage.fadeIn();
+
+
+
     }
 
 
